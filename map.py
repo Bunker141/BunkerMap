@@ -964,7 +964,7 @@ def main():
 				
 		elif event == "Download Plugin":
 			try:
-				req = urllib.request.Request('https://raw.githubusercontent.com/Bunker141/Phbot-Plugins/master/RewardsCollector.py', headers={'User-Agent': 'Mozilla/5.0'})
+				req = urllib.request.Request('https://raw.githubusercontent.com/Bunker141/BunkerMap/main/BunkerMapPlugin.py', headers={'User-Agent': 'Mozilla/5.0'})
 				with urllib.request.urlopen(req) as f:
 					lines = str(f.read().decode("utf-8"))
 					with open("BunkerMap.py", "w+") as f:
