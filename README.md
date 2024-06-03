@@ -2,7 +2,7 @@ BunkerMap is an interactive map of the Silkroad Online world, to be used with ph
 
 It also allows communication with bots to execute commands, I have added a few examples. You can also right click on the map to change the training area of a character and move to where you clicked... pretty cool. 
 
-![alt text](https://d.phx-cdn.com/original/2X/2/2883fe893cf4624b0d816a3293b732bf713b1387.jpeg)
+![alt text](https://d.phx-cdn.com/original/2X/d/dea4100800ea8e61679e19e531c016435539a1fe.jpeg)
 
 Plugin Download: [[Link] ](https://raw.githubusercontent.com/Bunker141/BunkerMap/main/BunkerMapPlugin.py) Right click > save as .py
 
