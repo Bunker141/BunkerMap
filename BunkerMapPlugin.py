@@ -11,7 +11,7 @@ import urllib.parse
 import json
 
 name = 'BunkerMap'
-version = '1.0'
+version = '1.1'
 
 Online = False
 Username = ""
@@ -121,7 +121,7 @@ def SendData():
 		return
 		
 	CharData = get_character_data()
-	CharData.update({"z": get_position()['z'], "online": Online, "status": get_status()})
+	CharData.update({"z": get_position()['z'], "online": Online, "status": get_status(), "trainingarea": get_training_area(), "monsters": get_monsters(), "party": get_party()})
 	#log(CharData)
 	if CharData == PreviousData and not EnableCommands:
 		return
