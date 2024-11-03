@@ -11,7 +11,7 @@ import urllib.parse
 import json
 
 name = 'BunkerMap'
-version = '1.1'
+version = '1.2'
 
 Online = False
 Username = ""
@@ -116,7 +116,7 @@ def disconnected():
 
 PreviousData = None
 def SendData():
-	global PreviousData
+	global PreviousData, UpdateDelay
 	if Username == None or Username == "":
 		return
 		
@@ -134,11 +134,13 @@ def SendData():
 		data = json.dumps(data).encode()
 		req = urllib.request.Request("http://127.0.0.1:8888",data=data,headers={'content-type':'application/json'})
 		with urllib.request.urlopen(req) as f:
+			UpdateDelay = 2000
 			response = f.read().decode()
 			jsonresponse = json.loads(response)
 			HandleResponse(jsonresponse)
 			return
 	except Exception as ex:
+		UpdateDelay = 60000
 		#log(str(ex))
 		pass
 
@@ -146,9 +148,10 @@ def SendData():
 def event_loop():
 	global DelayCounter
 	DelayCounter += 500
+	log(str(UpdateDelay))
 	if DelayCounter >= UpdateDelay and Online:
 		DelayCounter = 0
-		SendData()
+		Timer(0.1, SendData, ()).start()
 		
 		
 log('Plugin: [%s] Version %s Loaded' % (name,version))
