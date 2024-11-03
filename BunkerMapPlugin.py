@@ -148,7 +148,6 @@ def SendData():
 def event_loop():
 	global DelayCounter
 	DelayCounter += 500
-	log(str(UpdateDelay))
 	if DelayCounter >= UpdateDelay and Online:
 		DelayCounter = 0
 		Timer(0.1, SendData, ()).start()
